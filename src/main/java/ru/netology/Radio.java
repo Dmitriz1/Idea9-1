@@ -1,6 +1,27 @@
 package ru.netology;
 
 public class Radio {
+    private int currentStation;
+    private int numberOfStations;
+
+    public Radio() {
+        this.numberOfStations = 10;
+        this.currentStation = 0;
+    }
+
+    public Radio(int numberOfStations) {
+        this.numberOfStations = numberOfStations;
+        this.currentStation = numberOfStations - 1;
+    }
+
+    public int getCurrentStation() {
+        return currentStation;
+    }
+
+    public void setCurrentStation(int station) {
+        this.currentStation = station;
+    }
+
     public int decreaseAudio(int currentVolume) {
         if (currentVolume == 0) {
             currentVolume = 0;
@@ -19,21 +40,15 @@ public class Radio {
         return currentVolume;
     }
 
-    public int nextStation(int currentStation) {
-        if (currentStation == 9) {
-            currentStation = 0;
-        } else {
-            currentStation++;
-        }
+    public int nextStation() {
+        currentStation = (currentStation + 1) % numberOfStations;
         return currentStation;
     }
 
-    public int prevStation(int currentStation) {
-        if (currentStation == 0) {
-            currentStation = 9;
-        } else {
-            currentStation--;
-        }
+    public int prevStation() {
+        currentStation = (currentStation - 1 + numberOfStations) % numberOfStations;
         return currentStation;
     }
+
+
 }
