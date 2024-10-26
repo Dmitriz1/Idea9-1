@@ -9,9 +9,7 @@ public class Radio {
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume >= 0 && currentVolume <= 100) {
-            this.currentVolume = currentVolume;
-        }
+        this.currentVolume = currentVolume;
     }
 
     public int getCurrentStation() {
@@ -19,9 +17,7 @@ public class Radio {
     }
 
     public void setCurrentStation(int currentStation) {
-        if (currentStation >= 0 && currentStation <= 9) {
-            this.currentStation = currentStation;
-        }
+        this.currentStation = currentStation;
     }
 
     public void decreaseAudio() {
